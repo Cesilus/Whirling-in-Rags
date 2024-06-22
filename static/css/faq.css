@@ -1,0 +1,74 @@
+/* faq.css */
+
+body.white-background {
+    background: #fff; /* White background for the FAQ page */
+}
+
+.faq-container {
+    padding: 40px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.faq-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #000;
+}
+
+.faq-section {
+    margin-bottom: 40px;
+}
+
+.faq-section h2 {
+    font-size: 1.2em;
+    color: #FF6F61; /* Red color for section headers */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.faq-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    cursor: pointer;
+    align-items: center; /* Center align items vertically */
+    font-weight: bold;
+}
+
+.faq-item:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question {
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000; /* Black color for questions */
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.toggle-btn {
+    font-size: 1.2em;
+    color: #000; /* Black color for toggle button */
+}
+
+.faq-item.active .toggle-btn {
+    transform: rotate(45deg); /* Rotate the + sign to an x when active */
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+

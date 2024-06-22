@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    F.A.Q
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
+{% block body_class %}
+    white-background
+{% endblock %}
+
+{% block content %}
+<div class="faq-container">
+    <h1>F.A.Q</h1>
+
+    <div class="faq-section">
+        <h2>Returns and Refunds</h2>
+        <div class="faq-item">
+            <div class="faq-question">Changing Order</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">You can change the product size in your order until the order is shipped. Please note that a last-minute change may increase the time it takes to receive your product.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Cancelling Order</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">Once an order is placed it is not possible to cancel it.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Exchanging Items</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">Products cannot be exchanged. We reserve the right to exchange the product if the buyer pays the costs associated with the return, including the import and customs costs associated with the return outside the European Union (20-50% of the product cost, depending on the country). Please contact customerservice@whirling.com as soon as possible if you have any questions about the exchange.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Return Terms</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">Unfortunately, we do not accept product returns or exchanges. Only defective products can be returned and/or exchanged. You can read more about our return policy here.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Faulty or Damaged Item</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">If an item received is faulty or is got damaged during transit, you must please contact our customer service team at customerservice@whirling.com within 7 days of receipt with photographs and a detailed description of the damage.</div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>Orders and Shipping</h2>
+        <div class="faq-item">
+            <div class="faq-question">Shipping and Cost</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">All orders are shipped by our logistic partner Pakipoint, we provide worldwide shipping service. Shipping cost is applied at the checkout procedure. Import duties, local taxes, and fees are not included and will be the sole responsibility of the client.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Tracking Delivery Status</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">Once your order is shipped, you will receive an email with a tracking number, you can track your parcel with this number. You can also use the respective tracking number at your local postage provider, the tracking number is international.
+                With standard delivery, please check your national postal service, ex. USPS for the US, Canada Post
+                for Canada, etc.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Lost Package</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">We can start the inquiry when 4 weeks have passed since the package was sent out.
+                If you see that after leaving the for destination country your package has not arrived within 4 weeks
+                and the tracking has not been updated either, please let us know as soon as possible at customerservice@whirling.com.
+                Customers can always make a request/inquiry directly to the postal services of the destination country, even before 4 weeks.”</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Missed Delivery </div><span class="toggle-btn">+</span>
+            <div class="faq-answer">If you discover that a delivery attempt has been made, but you have not been able to receive it, please contact the courier company that is delivering the package as soon as possible. If the package is not received on time, it will be returned to the sender, i.e. us. In this case, please contact us at
+                customerservice@zaumstudio.com. It may take 4-12 weeks for the package to return to us. Once we have received the package, we will perform a quality control, check the delivery address from you and resend the order.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Delivery Time and Options</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">After your order has been manufactured and prepared (see here), your order will be sent according to the selected delivery method. We offer standard and express delivery. Standard delivery to the EU countries usually takes about 4-7 working days, the rest of the world 2-4 weeks. All express shipments are shipped with DHL Express, delivery time is 2-4 working days.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Delivery Address Change</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">It is possible to change the delivery address until the package has been sent out. Please write to customerservice@whirling.com as soon as possible.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Preparation Time of Your Order </div><span class="toggle-btn">+</span>
+            <div class="faq-answer">Your order will be processed and prepared within 4 weeks after you placed the order. Please notice that during specific periods and bank holidays, preparation of orders may experience slight delay, please feel free to contact customerservice@whirling.com to verify the status of your order.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Contact Details</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">Customers are required to provide a part of their information such as valid shipping address and receiver's data.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Order Confirmation</div> <span class="toggle-btn">+</span>
+            <div class="faq-answer">Once an order is placed and the payment is approved, you will receive an order confirmation email to the address registered in the system. If you haven’t received the confirmation email, please check your spam folder.</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/faq.js' %}"></script>
+{% endblock %}

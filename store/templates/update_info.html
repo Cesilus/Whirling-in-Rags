@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center"> <!-- Center the content horizontally -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Billing Information</h5>
+                    
+                    <form method="POST" action="{% url 'update_info' %}">
+                        {% csrf_token %}
+                        
+                        {{ form.as_p }}
+                        
+                        <br/>
+                        <h5 class="card-title">Shipping Information</h5>
+                        
+                        {{ shipping_form.as_p }}
+
+                        <br/><br/>
+                        <button type="submit" class="btn btn-secondary">
+                            Update Profile
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
