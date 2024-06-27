@@ -1,8 +1,138 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+    <style>
+        
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #fff;
+            padding: 1em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 2em;
+        }
+
+        .filter-sort-button {
+            align-self: flex-end;
+        }
+
+        .filter-sort-button button {
+            padding: 0.5em 1em;
+            border: 1px solid #000;
+            background-color: #fff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-sort-button button:after {
+            content: '\1F527';
+            margin-left: 0.5em;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+            width: 100%;
+            margin-top: 2em;
+        }
+
+        .side-filter {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+            overflow-x: hidden;
+            transition: 0.5s;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+        }
+
+        .side-filter-content {
+            padding: 2em;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .side-filter-content h2 {
+            margin-top: 0;
+        }
+
+        .side-filter-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .side-filter-content ul li {
+            padding: 0.5em 0;
+        }
+
+        .apply-btn {
+            padding: 0.5em 1em;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .filter-category h3 {
+            cursor: pointer;
+            margin: 1em 0 0.5em;
+        }
+
+        .filter-category ul {
+            display: none;
+            margin: 0;
+        }
+
+        .filter-category.open ul {
+            display: block;
+        }
+
+        .applied-filters {
+            margin: 1em 0;
+        }
+
+        .applied-filters span {
+            background-color: #e0e0e0;
+            padding: 0.2em 0.5em;
+            margin-right: 0.5em;
+            border-radius: 3px;
+            display: inline-block;
+        }
+
+
+    </style>
+{% endblock %}
 
 {% block content %}
 <!-- Header-->
-
 
 <!-- Search Form -->
 <div class="container">
@@ -25,6 +155,12 @@
                     </div>
                 </div>
                 <br/><br/>
+
+                <!-- Filter and Sort Button -->
+                <div class="filter-sort-button">
+                    <button id="filterSortBtn" class="btn btn-outline-dark">Filter & Sort</button>
+                </div>
+                <br/>
 
                 <!-- Product Listing -->
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -71,4 +207,90 @@
         </center>
     </div>
 </div>
+
+<!-- Side Filter -->
+<div id="sideFilter" class="side-filter">
+    <div class="side-filter-content">
+        <span id="closeBtn" class="close-btn">&times;</span>
+        <h2>Filter & Sort</h2>
+        <a href="#">Clear All</a>
+        <h3>Applied filters</h3>
+        <div class="applied-filters">
+            <span>Ultraboost</span>
+        </div>
+
+        <div class="filter-category">
+            <h3>Sort By</h3>
+            <ul>
+                <li>Price (Low - High)</li>
+                <li>Top Sellers</li>
+            </ul>
+        </div>
+
+        <div class="filter-category">
+            <h3>Gender</h3>
+            <ul>
+                <li>Women (40)</li>
+                <li>Men (37)</li>
+                <li>Unisex (15)</li>
+                <li>Kids (3)</li>
+            </ul>
+        </div>
+
+        <div class="filter-category">
+            <h3>Size</h3>
+            <ul>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+            </ul>
+        </div>
+
+        <div class="filter-category">
+            <h3>Best For</h3>
+            <ul>
+                <li>Running</li>
+                <li>Training</li>
+            </ul>
+        </div>
+
+        <div class="filter-category">
+            <h3>Color</h3>
+            <ul>
+                <li>Black</li>
+                <li>White</li>
+                <li>Red</li>
+                <li>Blue</li>
+            </ul>
+        </div>
+
+        <!-- Add more filter categories here -->
+
+        <button class="apply-btn">Apply (65)</button>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('filterSortBtn').addEventListener('click', function() {
+            document.getElementById('sideFilter').style.width = '300px';
+        });
+
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('sideFilter').style.width = '0';
+        });
+
+        document.querySelectorAll('.filter-category h3').forEach(category => {
+            category.addEventListener('click', function() {
+                this.parentElement.classList.toggle('open');
+            });
+        });
+    });
+</script>
 {% endblock %}

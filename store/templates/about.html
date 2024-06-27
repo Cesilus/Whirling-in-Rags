@@ -1,32 +1,36 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
+<head>
+    <link href="{% static 'css/about.css' %}" rel="stylesheet" />
 
-<!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">About Us...</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Welcome To Codemy Ecommerce...</p>
-                </div>
-            </div>
-        </header>
-
-        <div class="container">
-        	<div class="row">
-        		<center>
-        			<div class="col-8">
-        				<br/><br/>
-<p align="justify">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sollicitudin erat ex, eu egestas ipsum malesuada eget. Morbi lobortis felis in nisl cursus, eget dapibus magna elementum. Duis quis erat massa. Proin sed mollis libero, eget venenatis justo. Suspendisse tincidunt est pretium, congue erat sit amet, fringilla nisl. In vitae nunc tristique, aliquam tortor sed, feugiat velit. Donec ut urna mi. Nam ultrices pharetra gravida. Maecenas nulla velit, eleifend eget iaculis vel, iaculis vel orci. Nam sed ex vitae nisi fermentum gravida. Ut aliquet turpis sem, ac consequat lorem iaculis non. Vestibulum nisl quam, efficitur vel ullamcorper id, consequat ac massa. Quisque iaculis sapien arcu, quis lobortis eros aliquet pharetra.
-<br/><br/>
-Sed non condimentum dolor. Vivamus euismod ullamcorper urna, eget malesuada nibh bibendum a. Cras tincidunt, mauris ut faucibus finibus, eros diam dapibus arcu, ut eleifend dui elit ut ligula. Donec in orci eu urna molestie tristique. Etiam efficitur ut orci ut imperdiet. Vestibulum venenatis nunc id congue convallis. Quisque sodales nulla augue, eget feugiat turpis iaculis vitae. Nunc non tellus tincidunt, hendrerit nunc sit amet, convallis tortor. Quisque et tempor diam. Vivamus aliquet id lorem in sodales. Nulla a consectetur ex, eget maximus neque. Suspendisse varius, lectus vel auctor vestibulum, diam lacus consectetur risus, vel gravida arcu enim eget lectus. Duis sodales pretium interdum.
-<br/><br/>
-Etiam gravida non orci eget vestibulum. Donec et tristique massa, at laoreet nisl. Sed lobortis est massa, a blandit nibh tincidunt eu. Nam at tortor egestas, suscipit justo blandit, ultrices nisl. Phasellus imperdiet placerat eros, sed fermentum mi scelerisque id. Duis dignissim leo eu orci sodales mattis. Suspendisse nisl velit, tristique eget ante nec, egestas scelerisque metus. In pellentesque odio purus, vitae scelerisque massa sodales sit amet. Ut ex augue, elementum sed luctus a, facilisis et dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam mauris sapien, malesuada id hendrerit sed, accumsan nec nunc. Fusce consectetur, metus ac suscipit varius, nulla ante scelerisque tellus, ut pretium dui velit at lectus. Suspendisse sem nunc, viverra tempus venenatis sit amet, mattis a nibh. Nulla pretium dictum ipsum, eget placerat urna semper id. 
-</p>
-<br/><br/>
-        			</div>
-        		</center>
-        	</div>
+</head>
+<div class="about-container">
+    <div class="about-section">
+        <div class="text-content">
+                        <h1>      About Us</h1>
+            <p>WHIRLING IN RAGS was founded in 2024 as an effort to revolutionize the shopping experience for the blind and visually impaired by making stylish, high-quality clothing accessible and enjoyable for everyone.</p>
+            <p>We believe that fashion should be a joy, not a challenge, and we're here to ensure that every step of your shopping journey is smooth and inclusive.</p>
+            <p>Our aim is to concentrate on carefully designed and thoughtful silhouettes with sharp and memorable patterns. Crafted from fabrics selected for their quality and designed for everyday wear, we focus on timeless style that will last a long time.</p>
+            <p>Everything at Atelier is made with purpose to enhance and ease the browsing experience of our customers: a collaborative effort between our small and dedicated department and the wider studio here at Whirling in Rags.</p>
+            <p>We don't single out any one person as a clothing designer as our characters are usually the creative work of many people. Exceptions to this are cases where an item is the creation of a single artist, or when the concept and manufacture of a piece is the work of an artist but sold by us. In such cases, the artist's name will appear in the product information section.</p>
         </div>
+        <div class="image-content">
+            <img src="{% static 'Za.jpg' %}" alt="Jacket Model">
+        </div>
+    </div>
 
+    <div class="about-section">
+        <div class="image-content">
+            <img src="{% static 'zaum.png' %}" alt="Man Profile">
+        </div>
+        <div class="text-content">
+            <p>We focus on being as sustainable as we reasonably can and the most responsible version of ourselves.</p>
+            <p>We produce artifacts in small quantities to allow our team to get close to the entire process. That means we can ensure there is no overproduction, we reduce waste, and are able to maintain our high standard for quality.</p>
+            <p>All garment products are produced in Egypt and all have their own dedicated seamstresses. Over time we have built a strong relationship with them to bring you the best quality possible.</p>
+            <p>We get to know all of our partners, so we can answer ‘who made our clothes’ at every level of production. All our cooperation partners meet the working standard. It is our mission to work with them and have full overview and transparency on what is happening at working conditions. We limit the amount of dead stock and overproduction to ensure we use every strand of yarn to the end.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Category, Profile
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -99,18 +99,20 @@ def category_summary(request):
 	categories = Category.objects.all()
 	return render(request, 'category_summary.html', {"categories":categories})	
 
-def category(request, foo):
+def category(request, category_name):
 	# Replace Hyphens with Spaces
-	foo = foo.replace('-', ' ')
+	
 	# Grab the category from the url
 	try:
-		# Look Up The Category
-		category = Category.objects.get(name=foo)
-		products = Product.objects.filter(category=category)
-		return render(request, 'category.html', {'products':products, 'category':category})
+		category = get_object_or_404(Category,name = category_name)
+		products=Product.objects.filter(category=category)
+		return render(request, 'category.html', {'products': products, 'category': category})
 	except:
 		messages.success(request, ("That Category Doesn't Exist..."))
 		return redirect('home')
+		
+	
+	
 
 
 def product(request,pk):

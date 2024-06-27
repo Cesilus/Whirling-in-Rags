@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'General Grotesque Mono Light'; /* Name your font family */
+    src: url('/GeneralGrotesqueMono-Light.ttf'); /* Locate the .ttf file within your directory*/
+  }
+  
+
+body {
+    font-family: 'General Grotesque Mono Light', monospace;
+    font-size:16px;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.about-container {
+    background-color: white; /* Override the background image with white */
+    padding: 20px;
+    
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px; /* Reduced margin */
+    padding: 15px; /* Reduced padding */
+    background-color: #fff; /* White background for sections */
+    --border-breaker: 1px solid;
+    
+}
+
+.text-content {
+    width: 50%;
+    padding: 15px; /* Reduced padding */
+}
+
+.text-content h1 {
+    font-size: 2em; /* Slightly reduced font size */
+    margin-bottom: 15px; /* Reduced margin */
+    color: #444;
+    font-weight: 700;
+}
+
+.text-content p {
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 1em; /* Reduced font size */
+    line-height: 1.4; /* Slightly reduced line height */
+    font-weight: 400;
+}
+
+.image-content {
+    width: 50%;
+    padding: 15px; /* Reduced padding */
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+    }
+
+    .text-content, .image-content {
+        width: 100%;
+        padding: 10px; /* Mobile padding */
+    }
+}

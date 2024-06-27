@@ -2,6 +2,7 @@ from django.db import models
 import datetime
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from .choices import COLOR_CHOICES, GENDER_CHOICES
 
 
 # Create Customer Profile
@@ -61,14 +62,18 @@ class Customer(models.Model):
 
 
 
+
 # All of our Products
 class Product(models.Model):
 	name = models.CharField(max_length=100)
 	price = models.DecimalField(default=0, decimal_places=2, max_digits=6)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
+	gender = models.CharField(max_length=1, choices=GENDER_CHOICES, default="U")
 	description = models.CharField(max_length=250, default='', blank=True, null=True)
 	image = models.ImageField(upload_to='uploads/product/')
 	# Add Sale Stuff
+	color = models.CharField(max_length=3, choices=COLOR_CHOICES, null=True, blank=True)
+
 	is_sale = models.BooleanField(default=False)
 	sale_price = models.DecimalField(default=0, decimal_places=2, max_digits=6)
 

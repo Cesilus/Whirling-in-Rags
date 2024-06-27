@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        
+            <!-- Other head elements -->
+        {% block extra_css %}{% endblock %}
+        
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -16,7 +20,8 @@
         <link href="https://db.onlinewebfonts.com/c/c9bb2e7aaafe09b78631da34da1bfb93?family=Superbastone+W01+Bold" rel="stylesheet">
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
         {% block styles %}{% endblock %}
         
         <style>

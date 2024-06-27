@@ -19,7 +19,7 @@ class ShippingAddress(models.Model):
 
 	# Don't pluralize address
 	class Meta:
-		verbose_name_plural = "Shipping Address"
+		verbose_name_plural = "Shipping Addresses"
 
 	def __str__(self):
 		return f'Shipping Address - {str(self.id)}'
